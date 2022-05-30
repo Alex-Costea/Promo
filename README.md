@@ -1,6 +1,6 @@
 # Promo
 
-**Promo** (**Pro**cedural **Mo**del, formerly known as Promo) is a minimalist esoteric programming language based on Brainfuck, with a few key differences. It is built to be an effective model of computation for theoretical purposes.
+**Promo** (**Pro**cedural **Mo**del) is a minimalist esoteric programming language based on Brainfuck, with a few key differences. It is built to be an effective model of computation for theoretical purposes.
 
 # Features
 
@@ -112,6 +112,6 @@ For every n<=10000, the answer is at most 26. 26 is not necessarily the minimum 
 
 # Try it out!
 
-https://alex-costea.github.io/Promo/
+https://alcostar.net/Promo/
 
 **NOTE:** There is no guarantee that this works in any instance and there can be bugs
