@@ -92,7 +92,7 @@ internal class runProgram(program:programCommand,input:BigInt) {
             for(j in y.body)
                 runCommand(j)
         }
-        else if(CurrentPosition()>0 && y.pos==If.Negative)
+        else if(CurrentPosition()<0 && y.pos==If.Negative)
         {
             for(j in y.body)
                 runCommand(j)

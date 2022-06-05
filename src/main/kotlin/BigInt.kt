@@ -177,8 +177,8 @@ class BigInt(x:String){
     {
         if(!positive && !x.positive)
         {
-            var x1=this
-            var x2=x
+            var x1=BigInt(this)
+            var x2=BigInt(x)
             x1.positive=true
             x2.positive=true
             var res=x1+x2
