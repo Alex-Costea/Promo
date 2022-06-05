@@ -21,7 +21,7 @@ class Promo(BBCL:String){
     }
 
 
-    fun run_samethread(input:BigInt):BigInt
+    fun run(input:BigInt):BigInt
     {
         return runProgram(prog, input).result
     }
