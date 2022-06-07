@@ -112,6 +112,6 @@ For every n<=10000, the answer is at most 26. 26 is not necessarily the minimum 
 
 # Try it out!
 
-https://alcostar.net/Promo/
+https://alex.costea.in/Promo/
 
 **NOTE:** There is no guarantee that this works in any instance and there can be bugs
