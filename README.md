@@ -59,7 +59,7 @@ There are 8 commands, corresponding to 6 characters:
     3. if the current cell is not 0, call function k
     4. move to the left by n
 
-This feature is kinda bad and might be removed in a future version.
+- - This feature above is kinda bad and might be removed in a future version.
 
 - **+- (cross)** separates procedures between them. everything before the first **+-** is considered procedure 0, then it separates procedures 1, 2, 3 etc.
 
