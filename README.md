@@ -20,13 +20,15 @@ A big inspiration for making this language is the fact that Brainfuck, minimalis
 
 Promo, as the name suggests, is built around procedural programming and recursion. In fact, it's the only way to loop code.
 
+Note that the list of numbers is *global*, and there are no local variables. All methods are equivalent to `void method(void)`.
+
 ## Dynamic calls
 
-There is support for calling the nth function, where n is the value of the current cell.
+There is support for calling the nth methof, where n is the value of the current cell.
 
 ## If and For loop-like functionality
 
-Using functions, implementing "if x is not 0, then:" is easy. And using the mace pattern, you can implement functionality similar to for loops.
+Using methods, implementing "if x is not 0, then:" is easy. And using the mace pattern, you can implement functionality similar to for loops.
 
 ## Unboundedness
 
@@ -57,10 +59,13 @@ There are 8 commands, corresponding to 6 characters:
     3. if the current cell is not 0, call function k
     4. move to the left by n
 
+This feature is kinda bad and might be removed in a future version.
 
 - **+- (cross)** separates procedures between them. everything before the first **+-** is considered procedure 0, then it separates procedures 1, 2, 3 etc.
 
 - **>< (x)** is a special symbol which defines the way the program will run. If (and only if) the first 2 valid characters are ">" and "<", the program will run in xPromo mode. Otherwise, it will run in iPromo mode
+
+The following are "unofficial commands", that do not need to be specifically implemented in a compiler/interpreter, as they are implied by the other commands:
 
 - **<> (diamond)** has no special meaning (and as such is not an individual command), it simply means "go to the left and then to the right". It can be used, however, as filler between function calls. For example "#<>#*" means first call function #1 and then function #2. If nothing (or characters with no significance such as spaces) is put between the 2 calls, it would be interpreted as "call function #6"
 
@@ -114,4 +119,4 @@ For every n<=10000, the answer is at most 26. 26 is not necessarily the minimum 
 
 https://alex.costea.in/Promo/
 
-**NOTE:** There is no guarantee that this works in any instance and there can be bugs
+**NOTE:** This really hasn't been troughoutly tested. There's no guarantee there won't be bugs.
