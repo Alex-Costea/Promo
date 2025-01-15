@@ -1,8 +1,6 @@
-# Promo 1.1
+# Promo
 
 **Promo** (**Pro**cedural **Mo**del) is a minimalist esoteric programming language based on Brainfuck, with a few key differences. It is built to be an effective model of computation for theoretical purposes.
-
-**Note: I am currently in the process of updating the interpreter for the new language specification.**
 
 # Features
 
@@ -23,6 +21,10 @@ A big inspiration for making this language is the fact that Brainfuck, minimalis
 Promo, as the name suggests, is built around procedural programming and recursion. In fact, it's the only way to loop code.
 
 Note that the list of numbers is *global*, and there are no local variables. All methods are equivalent to `void method(void)`.
+
+## Dynamic calls
+
+There is support for calling the nth methof, where n is the value of the current cell.
 
 ## If and For loop-like functionality
 
@@ -48,8 +50,16 @@ There are 8 commands, corresponding to 6 characters:
 
 - **#** and **@** are the characters used for function calls. Calls to nonexistent fuctions are simply ignored.
 
-- - A string of #'s and @'s is interpreted as "convert # to 1 and @ to 0, and call the function corresponding to that number in binary". For example, @ calls function 0, # calls function 1, #@ calls function 2, ## calls function 3 etc. Leading 0's are ignored, so @@## is equivalent to ##. The calls are only made if the current cell is not 0.
+- - A string of #'s and @'s, starting with an #, is interpreted as "convert # to 1 and @ to 0, and call the function corresponding to that number in binary". For example, # calls function 1, #@ calls function 2, ## calls function 3 etc. The calls are only made if the current cell is not 0.
 
+- - A string of n @'s without a # preceeding it is taken as a dynamic call. You usually do not need this. It is equivalent to the following instructions:
+
+    1. let k = the current cell
+    2. move to the right by n
+    3. if the current cell is not 0, call function k
+    4. move to the left by n
+
+- - This feature above is kinda bad and might be removed in a future version.
 
 - **+- (cross)** separates procedures between them. everything before the first **+-** is considered procedure 0, then it separates procedures 1, 2, 3 etc.
 
@@ -85,10 +95,9 @@ Another few easy programs:
     >< + // f(x)=x plus 1
     >< # +- -#++ // f(x)=2*x, x positive or 0
     >< # +- # // f : {0} → {0}, f(0)=0
-    +@ // loops forever
+    +<@ // shortest program to loop forever
 
 # The Promo game
-**Note: this applies to Promo 1.0**
 
 What's the biggest number that can be outputted with an iPromo program with n characters (that doesn't run forever)?
 
@@ -101,15 +110,12 @@ iBB(21) is at least 2^256-2 (115792089237316195423570985008687907853269984665640
 iBB(22) has more than 1 million digits.
 
 # Kolmogorov complexity
-**Note: this applies to Promo 1.0**
 
 How many characters does the shortert iPromo program that outputs n have?
 
 For every n<=10000, the answer is at most 26. 26 is not necessarily the minimum number with this property however, it's only an upper bound. Note that if n can be outputted with k characters, it can also be outputted with k+1 characters.
 
 # Try it out!
-
-**Promo 1.0 only**
 
 https://alex.costea.in/Promo/
 
